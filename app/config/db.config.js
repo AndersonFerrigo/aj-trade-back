@@ -1,13 +1,6 @@
 module.exports = {
-    HOST: "localhost",
-    USER: "root",
-    PASSWORD: "estudos2012",
-    DB: "aj_trade",
-    dialect: "mysql",
-    pool: {
-      max: 5,
-      min: 0,
-      acquire: 30000,
-      idle: 10000
-    }
+    HOST: "us-cdbr-east-02.cleardb.com",
+    USER: "b0b88dac63-eb3a",
+    PASSWORD: "24e4552a",
+    DB: "heroku_229ca7137a2c921"
   };
