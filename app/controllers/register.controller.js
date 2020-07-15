@@ -35,8 +35,8 @@ exports.create = (req, res) => {
 
 // Retrieve all Tutorials from the database.
 exports.findAll = (req, res) => {
-    const email = req.query.email;
-    var condition = email ? { email: { [Op.like]: `%${email}%` } } : null;
+    const user = req.query.user;
+    var condition = user ? { user: { [Op.like]: `%${user}%` } } : null;
   
     Register.findAll({ where: condition })
       .then(data => {
@@ -51,20 +51,20 @@ exports.findAll = (req, res) => {
   
 };
 
-// Find a single Tutorial with an id
-exports.findOne = (req, res) => {
-    const id = req.params.id;
+exports.findByUser = (req, res) => {
+  const user = req.params.user;
 
-    Register.findByPk(id)
-      .then(data => {
-        res.send(data);
-      })
-      .catch(err => {
-        res.status(500).send({
-          message: "Error retrieving Tutorial with id=" + id
-        });
+  Register.findByUser(user)
+    .then(data => {
+      res.send(data);
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: "Error retrieving Register with user=" + user
       });
+    });
 };
+
 
 // Update a Tutorial by the id in the request
 exports.update = (req, res) => {
