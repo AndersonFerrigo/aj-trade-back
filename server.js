@@ -34,7 +34,7 @@ require("./app/routes/moradia.routes")(app);
 require("./app/routes/pacotes.routes")(app);
 
 // set port, listen for requests
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
     console.log(`Server is running in port ${PORT}.`);
