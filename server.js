@@ -4,11 +4,12 @@ const cors = require("cors");
 
 const app = express();
 
-var corsOptions = {
-    origin: "http://localhost:5000" 
-};
 
-app.use(cors(corsOptions));
+app.use(cors({
+    origin: (origin, callback) => callback(null, true),
+    credentials: true
+  })
+);
 
 // parse requests of content-type - application/json
 app.use(bodyParser.json());
