@@ -33,6 +33,7 @@ exports.create = (req, res) => {
     });
 };
 
+ 
 // Retrieve all Tutorials from the database.
 exports.findAll = (req, res) => {
     const user = req.query.user;
@@ -51,9 +52,9 @@ exports.findAll = (req, res) => {
   
 };
 
-exports.findByUser = (req, res) => {
-  const user = req.params.user;
 
+exports.findByUser = (req, res) => {  
+  const user = req.params.user;
   Register.findByUser(user)
     .then(data => {
       res.send(data);
